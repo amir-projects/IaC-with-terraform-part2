@@ -38,3 +38,12 @@ variable "bucket_name" {
 You can provide values like this when running Terraform:
 terraform apply -var="bucket_name=my-demo-bucket"
 ```
+2️⃣ Terraform Outputs
+Outputs show you important information after Terraform runs — such as an S3 bucket's ARN, public IP, etc.
+
+📄 outputs.tf
+
+output "bucket_arn" {
+  value = aws_s3_bucket.demo.arn
+}
+When you run terraform apply, the ARN will be printed.
