@@ -33,7 +33,7 @@ variable "bucket_name" {
   type        = string
   description = "The name of the S3 bucket"
 }
-## You can provide values like this when running Terraform:
-```
+
+```sh
 terraform apply -var="bucket_name=my-demo-bucket"
 ``` 
