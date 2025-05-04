@@ -35,5 +35,6 @@ variable "bucket_name" {
 }
 
 ```sh
+You can provide values like this when running Terraform:
 terraform apply -var="bucket_name=my-demo-bucket"
-``` 
+```
