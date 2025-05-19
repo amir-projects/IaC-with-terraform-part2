@@ -72,6 +72,28 @@ resource "aws_s3_bucket" "lab_bucket" {
   bucket = var.bucket_name
 }
 ```
+📌 This does two things:
+
+- Tells Terraform to use AWS and the region from var.region
+
+- Creates a new S3 bucket using the name from var.bucket_name
+So when you run:
+```bash
+terraform init
+terraform apply
+```
+Terraform reads:
+
+- variables.tf to know what values are needed
+
+- terraform.tfvars to get the real values
+
+- main.tf to apply them to AWS
+
+🧪 Output:
+- A bucket will be created in AWS S3
+- The bucket name will match what you gave in terraform.tfvars
+
 
 ## 2️⃣ Terraform Outputs
 
@@ -83,6 +105,7 @@ output "bucket_arn" {
   value = aws_s3_bucket.demo.arn
 }
 ```
+
 
 When you run `terraform apply`, the ARN will be printed.
 
