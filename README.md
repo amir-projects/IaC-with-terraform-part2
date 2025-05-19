@@ -18,14 +18,14 @@ You’ll learn some important Terraform topics and then try a **hands-on lab** t
 
 ---
 
-## 1️⃣  Step -1 Terraform Variables - Making your code resuable 
+## 🟢 STEP -1 Terraform Variables - Making your code resuable 
    🎯 Goal: We want to store values like region and bucket name in one place — so we can reuse and change them easily later
 
    🧠 Why use variables?
    
       Imagine you are writing code to create a bucket. If you hardcode the bucket name like this:
-      `bucket = "student-lab-bucket"`
-      Then, if 10 people use this code — it will fail due to duplicate bucket names!
+      bucket = "student-lab-bucket"
+      Then, if 10 engineers use this code — it will fail due to duplicate bucket names!
       
    ✅ Solution: Use a variable so each person can give a unique name without touching the code.
  
@@ -57,6 +57,21 @@ bucket_name = "my-lab-bucket-002"
 ✅ Quick Recap:
 - You defined placeholders (region, bucket_name) using variables.
 - You gave real values to those placeholders in terraform.tfvars.
+
+🟢 STEP 2: Create an AWS S3 Bucket Using Those Variables
+ 🎯 Goal:Use the variables to create a real S3 bucket in AWS.
+
+🧾`Create a file called main.tf`:
+
+```bash 
+provider "aws" {
+  region = var.region
+}
+
+resource "aws_s3_bucket" "lab_bucket" {
+  bucket = var.bucket_name
+}
+```
 
 ## 2️⃣ Terraform Outputs
 
