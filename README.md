@@ -95,19 +95,19 @@ Terraform reads:
 - The bucket name will match what you gave in terraform.tfvars
 
 
-## 2️⃣ Terraform Outputs
-
-Outputs show you important information after Terraform runs — such as an S3 bucket's ARN, public IP, etc.
+## 2️⃣ Terraform Outputs - See What you made
+🎯 Goal: After creating something (like a bucket), we want to see and use its name, ARN, or URL easily — that's what outputs do.
 
 📄 `outputs.tf`
 ```hcl
-output "bucket_arn" {
-  value = aws_s3_bucket.demo.arn
+output "bucket_name" {
+  value = aws_s3_bucket.lab_bucket.bucket
 }
 ```
-
+📌 This prints the bucket name after apply.
 
 When you run `terraform apply`, the ARN will be printed.
+
 
 ---
 
