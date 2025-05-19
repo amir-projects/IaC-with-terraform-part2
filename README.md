@@ -48,11 +48,15 @@ variable "bucket_name" {
 
 🧾Create a file called `terraform.tfvars`
 ```bash
-terraform apply -var="bucket_name=my-demo-bucket"
+bucket_name = "my-lab-bucket-002"
 ```
 
 ---
 📌 This file gives value to bucket_name so Terraform doesn’t ask for it during execution.
+
+✅ Quick Recap:
+- You defined placeholders (region, bucket_name) using variables.
+- You gave real values to those placeholders in terraform.tfvars.
 
 ## 2️⃣ Terraform Outputs
 
