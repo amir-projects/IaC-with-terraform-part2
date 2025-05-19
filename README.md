@@ -46,12 +46,13 @@ variable "bucket_name" {
 - Region is fixed to us-west-2
 - Bucket name must be passed from the user
 
-You can provide values like this when running Terraform:
+🧾Create a file called `terraform.tfvars`
 ```bash
 terraform apply -var="bucket_name=my-demo-bucket"
 ```
 
 ---
+📌 This file gives value to bucket_name so Terraform doesn’t ask for it during execution.
 
 ## 2️⃣ Terraform Outputs
 
