@@ -113,9 +113,9 @@ When you run `terraform apply`, the ARN will be printed.
 
 ## 3️⃣ Terraform Dynamic Blocks
 
-Dynamic blocks let you write repeating blocks like tags, rules, or configs.
+It’s a key-value pair used for repeated logic like tagging.
 
-📄 Example with tags:
+📄 Example with tags modify variables.tf:
 ```hcl
 variable "tags" {
   type = map(string)
@@ -123,13 +123,14 @@ variable "tags" {
     Owner       = "TeamA"
     Environment = "Dev"
   }
-}
-
-resource "aws_s3_bucket" "demo" {
-  bucket = var.bucket_name
-  tags   = var.tags
-}
 ```
+Update main.tf 
+```hcl
+resource "aws_s3_bucket" "lab_bucket" {
+  bucket = var.bucket_name
+
+  tags = var.tags
+}
 
 ---
 
