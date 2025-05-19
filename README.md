@@ -22,9 +22,11 @@ You’ll learn some important Terraform topics and then try a **hands-on lab** t
    🎯 Goal: We want to store values like region and bucket name in one place — so we can reuse and change them easily later
 
    🧠 Why use variables?
+   
       Imagine you are writing code to create a bucket. If you hardcode the bucket name like this:
       `bucket = "student-lab-bucket"`
       Then, if 10 people use this code — it will fail due to duplicate bucket names!
+      
    ✅ Solution: Use a variable so each person can give a unique name without touching the code.
  
 
