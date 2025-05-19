@@ -18,15 +18,25 @@ You’ll learn some important Terraform topics and then try a **hands-on lab** t
 
 ---
 
-## 1️⃣ Terraform Variables
+## 1️⃣ Terraform Variables - Making your code resuable 
+   🎯 Goal: We want to store values like region and bucket name in one place — so we can reuse and change them easily later
+   🧠 Why use variables?
+      Imagine you are writing code to create a bucket. If you hardcode the bucket name like this:
+      bucket = "student-lab-bucket"
+     
+      - Then, if 10 people use this code — it will fail due to duplicate bucket names!
 
-Variables help you avoid hardcoding values.  
-Instead of writing the same thing again and again, you define a variable and use it.
+    ✅ Solution: Use a variable so each person can give a unique name without touching the code.
+    📘 What are Variables?
+- Variables allow you to pass values into your Terraform code, making it reusable and flexible.
+- Variables help you avoid hardcoding values.  
+- Instead of writing the same thing again and again, you define a variable and use it.
 
 📄 `variables.tf`
 ```hcl
 variable "region" {
-  default = "us-west-2"
+description = "AWS Region"
+default = "us-west-2"
 }
 
 variable "bucket_name" {
@@ -34,6 +44,9 @@ variable "bucket_name" {
   description = "The name of the S3 bucket"
 }
 ```
+📌 This says:
+- Region is fixed to us-west-2
+- Bucket name must be passed from the user
 
 You can provide values like this when running Terraform:
 ```bash
